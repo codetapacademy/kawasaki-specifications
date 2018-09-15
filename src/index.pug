@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    title Kawasaki Specifications
+    meta(content="Kawasaki Specifications rendered in a table and with display grid" name="description")
+    link(rel="stylesheet", href="/style.css")
+  body
+    table
+      thead
+        tr
+          each tableData in data.kawasaki.thead
+            td(colspan=tableData.col)!= tableData.content
+
+      tbody
+        each tableRow in data.kawasaki.tbody
+          tr
+            each tableData, key in tableRow
+              if key === 0
+                th(colspan=tableData.col)!= tableData.content
+              else
+                td(colspan=tableData.col)!= tableData.content
+
