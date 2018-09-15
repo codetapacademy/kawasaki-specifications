@@ -1,7 +1,35 @@
+// general styling
 html,
 body
   font-family: sans-serif
 
+// grid styling
+.table
+  display: grid
+  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+  grid-template-columns: repeat(5, 1fr)
+
+// I want to write a bunch of classes that spawn
+// 1 fraction, 2 fractions, ... 3, 4
+.table-data
+  border: 1px solid grey
+  padding: 5px
+  margin-bottom: -1px
+  margin-right: -1px
+
+.table-data-span-4
+  grid-column: span 4
+
+.table-data-span-3
+  grid-column: span 3
+
+.table-data-span-2
+  grid-column: span 2
+
+.table-data-span-1
+  // grid-column: span 1
+
+// table styling
 table 
   width: 100%
   border-collapse: collapse
@@ -15,7 +43,8 @@ td
   padding: 5px
 
 thead td, 
-th 
+th,
+.thead
   background-color: #eaecf0
   font-weight: bold
   border: 1px solid #a2a9b1

@@ -5,6 +5,20 @@ html(lang="en")
     meta(content="Kawasaki Specifications rendered in a table and with display grid" name="description")
     link(rel="stylesheet", href="/style.css")
   body
+    h1 Kawasaki rendered with CSS3 display grid
+    .table
+      each tableData in data.kawasaki.thead
+        .table-data(class=`table-data-span-${tableData.col} thead`)!= tableData.content
+
+      each tableRow in data.kawasaki.tbody
+        each tableData, key in tableRow
+          if key === 0
+            .table-data(class=`table-data-span-${tableData.col} thead`)!= tableData.content
+          else
+            .table-data(class=`table-data-span-${tableData.col}`)!= tableData.content
+
+
+    h1 Kawasaki rendered with table html tag
     table
       thead
         tr
